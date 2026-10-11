@@ -57,11 +57,8 @@ function render() {
   const searchTerm = searchInput.value.trim().toLowerCase();
 
   const filteredNotes = notes.filter(function (note) {
-    return (
-      note.text.toLowerCase().includes(searchTerm) ||
-      note.category.toLowerCase().includes(searchTerm)
-    );
-  });
+  return note.text.toLowerCase().includes(searchTerm);
+});
 
   filteredNotes.forEach(function (note) {
     const noteItem = document.createElement("li");
@@ -109,7 +106,7 @@ function render() {
   /* Show a message if a search has no matches. */
   if (searchTerm !== "" && filteredNotes.length === 0) {
     const emptyMessage = document.createElement("li");
-    emptyMessage.textContent = "No matching notes found.";
+    emptyMessage.textContent = "No notes match your search.";
     notesList.appendChild(emptyMessage);
   }
 
