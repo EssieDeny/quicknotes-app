@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickNotes - Your Personal Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>QuickNotes</h1>
+    <p>Your thoughts, organised in one place.</p>
+  </header>
+
+  <main>
+    <section id="add-note-section">
+      <h2>Add a note</h2>
+
+      <form id="note-form">
+        <div class="form-group">
+          <label for="note-input">Your note</label>
+          <input
+            type="text"
+            id="note-input"
+            name="note"
+            placeholder="What would you like to remember?"
+            maxlength="200"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="note-category">Category</label>
+          <select id="note-category" name="category">
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="Study">Study</option>
+          </select>
+        </div>
+
+        <button type="submit">Add Note</button>
+      </form>
+
+      <p id="error-message" role="alert"></p>
+    </section>
+
+    <section id="your-notes-section">
+      <h2>Your notes</h2>
+
+      <label for="search-input">Search your notes</label>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search notes..."
+      >
+
+      <p id="note-count">You have no notes yet.</p>
+
+      <ul id="notes-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>QuickNotes — Keep your thoughts organised.</p>
+  </footer>
+</body>
+</html>
+
